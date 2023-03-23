@@ -455,7 +455,7 @@ uint8_t current_tap_frame = 0;
  static void print_status_narrow(void) {
      // Print current mode
      oled_write_P(PSTR("\n\n"), false);
-     oled_write_ln_P(PSTR("Dane\nEvans"), false);
+     oled_write_ln_P(PSTR("James\nPeng"), false);
 
      oled_write_ln_P(PSTR(""), false);
 
@@ -491,7 +491,7 @@ uint8_t current_tap_frame = 0;
              oled_write_P(PSTR("Raise"), false);
              break;
          case _ALT:
-             oled_write_P(PSTR("Alt"), false);
+             oled_write_P(PSTR("Alt\n"), false);
              break;
          case _ADJUST:
              oled_write_P(PSTR("Adj\n"), false);
