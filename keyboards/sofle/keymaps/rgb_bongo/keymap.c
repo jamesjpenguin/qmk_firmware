@@ -19,7 +19,7 @@
 
 #include QMK_KEYBOARD_H
 
-#define INDICATOR_BRIGHTNESS 30
+#define INDICATOR_BRIGHTNESS 20
 
 #define HSV_OVERRIDE_HELP(h, s, v, Override) h, s , Override
 #define HSV_OVERRIDE(hsv, Override) HSV_OVERRIDE_HELP(hsv,Override)
@@ -678,9 +678,9 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 				//case _COLEMAK:
 				case _QWERTY:
 					if (clockwise) {
-						tap_code(KC_MPRV);
+						tap_code(KC_UP);
 					} else {
-						tap_code(KC_MNXT);
+						tap_code(KC_DOWN);
 					}
 				break;
 				//case _COLEMAKDH:
@@ -693,16 +693,16 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 			case _RAISE:
 			case _ALT:
 					if (clockwise) {
-						tap_code(KC_UP);
+						tap_code(KC_MPRV);
 					} else {
-						tap_code(KC_DOWN);
+						tap_code(KC_MNXT);
 					}
 				break;
 			default:
 					if (clockwise) {
-						tap_code(KC_WH_D);
+						tap_code(KC_UP);
 					} else {
-						tap_code(KC_WH_U);
+						tap_code(KC_DOWN);
 					}
 				break;
 		}
