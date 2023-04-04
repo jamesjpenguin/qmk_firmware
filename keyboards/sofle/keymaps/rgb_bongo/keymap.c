@@ -43,8 +43,8 @@
 	  {35+ 20, 2, hsv}, \
 	  {35+ 30, 2, hsv}
 #define SET_INNER_COL(hsv)	\
-	{33, 4, hsv}, \
-	  {35+ 33, 4, hsv}
+	{32, 4, hsv}, \
+	  {35+ 32, 4, hsv}
 
 #define SET_OUTER_COL(hsv) \
 	{7, 4, hsv}, \
@@ -56,7 +56,7 @@
 	{0, 1, HSV_OVERRIDE_HELP(hsv, INDICATOR_BRIGHTNESS)}, \
     {35+1, 1, HSV_OVERRIDE_HELP(hsv, INDICATOR_BRIGHTNESS)}, \
 		{1, 6, hsv}, \
-    {65+1, 6, hsv}, \
+    {35+2, 6, hsv}, \
 		{7, 4, hsv}, \
 	  {35+ 7, 4, hsv}, \
 		{25, 2, hsv}, \
@@ -148,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
   KC_GRV,   KC_Q,   KC_UP,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,   KC_BSPC,
   //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
-  KC_UNDS,  KC_LEFT, KC_DOWN,  KC_RIGHT,  KC_F,  KC_G,                    KC_H,    KC_J,   KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+  KC_UNDS,  KC_LEFT, KC_DOWN,  KC_RIGHT,  KC_F,  KC_G,                    KC_LEFT,    KC_DOWN,   KC_UP,    KC_RIGHT,    KC_SCLN, KC_QUOT,
   //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
   KC_MINUS,  KC_NO,  KC_NO,   KC_NO,   KC_WH_D, KC_PGDN,_______,    _______,KC_NO,  KC_NO,  KC_NO,   KC_NO,   KC_NO,    _______,
   //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
@@ -269,7 +269,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 #ifdef RGBLIGHT_ENABLE
-char layer_state_str[70];
+char layer_state_str[72];
 // Now define the array of layers. Later layers take precedence
 
 // QWERTY,
