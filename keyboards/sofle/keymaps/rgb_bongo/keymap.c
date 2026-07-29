@@ -275,9 +275,7 @@ char layer_state_str[72];
 // QWERTY,
 // Light on inner column and underglow
 const rgblight_segment_t PROGMEM layer_qwerty_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-  SET_LAYER_ID(HSV_GREEN)
-  //SET_UNDERGLOW(HSV_GREEN)
-
+  SET_INDICATORS(HSV_GREEN) // dimmed status LEDs only; rest of board keeps fading
 );
 //const rgblight_segment_t PROGMEM layer_colemakdh_lights[] = RGBLIGHT_LAYER_SEGMENTS(
 //  SET_LAYER_ID(HSV_PINK)
@@ -286,8 +284,10 @@ const rgblight_segment_t PROGMEM layer_qwerty_lights[] = RGBLIGHT_LAYER_SEGMENTS
 // _NUM,
 // Light on outer column and underglow
 const rgblight_segment_t PROGMEM layer_num_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-	SET_LAYER_ID(HSV_TEAL)
-
+	{0, 1, HSV_OVERRIDE(HSV_CYAN, INDICATOR_BRIGHTNESS)},
+	{1, 35, HSV_CYAN},
+	{36, 1, HSV_OVERRIDE(HSV_CYAN, INDICATOR_BRIGHTNESS)},
+	{37, 35, HSV_CYAN}
 );
 // _SYMBOL,
 // Light on inner column and underglow
@@ -303,14 +303,11 @@ const rgblight_segment_t PROGMEM layer_command_lights[] = RGBLIGHT_LAYER_SEGMENT
 
 //_NUMPAD
 const rgblight_segment_t PROGMEM layer_numpad_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-	SET_INDICATORS(HSV_ORANGE),
-    SET_UNDERGLOW(HSV_ORANGE),
-	SET_NUMPAD(HSV_BLUE),
-    {7, 4, HSV_ORANGE},
-    {25, 2, HSV_ORANGE},
-    {35+6, 4, HSV_ORANGE},
-    {35+25, 2, HSV_ORANGE}
-    );
+	{0, 1, HSV_OVERRIDE(HSV_ORANGE, INDICATOR_BRIGHTNESS)},
+	{1, 35, HSV_ORANGE},
+	{36, 1, HSV_OVERRIDE(HSV_ORANGE, INDICATOR_BRIGHTNESS)},
+	{37, 35, HSV_ORANGE}
+);
 // _SWITCHER   // light up top row
 const rgblight_segment_t PROGMEM layer_switcher_lights[] = RGBLIGHT_LAYER_SEGMENTS(
 	SET_LAYER_ID(HSV_GREEN),
